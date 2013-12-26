@@ -6,6 +6,9 @@ class ContactsController < ApplicationController
   def status
   end
 
+  def status_from_node
+  end
+
   def live_updates
     response.headers["Content-Type"] = "text/event-stream"
     redis = Redis.new

@@ -46,3 +46,5 @@ end
 
 gem 'puma'
 gem 'redis'
+gem 'quiet_assets', :group => :development
+

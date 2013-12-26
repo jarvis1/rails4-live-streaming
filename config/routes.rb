@@ -3,6 +3,7 @@ Rails4LiveStreaming::Application.routes.draw do
     collection do
       get 'status'
       get 'live_updates'
+      get 'status_from_node'
     end
   end
 
