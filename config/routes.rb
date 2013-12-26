@@ -1,5 +1,10 @@
 Rails4LiveStreaming::Application.routes.draw do
-  resources :contacts
+  resources :contacts do
+    collection do
+      get 'status'
+      get 'live_updates'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

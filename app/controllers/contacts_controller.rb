@@ -1,5 +1,26 @@
 class ContactsController < ApplicationController
+  include ActionController::Live
+
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+
+  def status
+  end
+
+  def live_updates
+    response.headers["Content-Type"] = "text/event-stream"
+    redis = Redis.new
+    redis.psubscribe('contacts.*') do |on|
+      on.pmessage do |pattern, event, data|
+        response.stream.write("event: #{event}\n")
+        response.stream.write("data: #{data}\n\n")
+      end
+    end
+  rescue IOError
+    # Client disconnected
+  ensure
+    redis.quit
+    response.stream.close
+  end
 
   # GET /contacts
   # GET /contacts.json
