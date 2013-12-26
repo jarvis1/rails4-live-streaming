@@ -18,5 +18,5 @@ Assuming ruby 1.9.3+, sqlite3, and bundler gem installed:
 
  * Watch server-sent events: http://localhost:3000/contacts/status
  * Open another tab and create new contacts: http://localhost:3000/contacts
-
+ * To try out node.js, clone https://github.com/jarvis1/sses-node-example and go to: http://localhost:3000/contacts/status_from_node
 
