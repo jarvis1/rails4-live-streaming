@@ -16,6 +16,7 @@ Assuming ruby 1.9.3+, sqlite3, and bundler gem installed:
 
 ## Usage
 
- * Create new contacts: http://localhost:3000/contacts
  * Watch server-sent events: http://localhost:3000/contacts/status
+ * Open another tab and create new contacts: http://localhost:3000/contacts
+
 
